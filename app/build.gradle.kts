@@ -52,8 +52,22 @@ dependencies {
     implementation(libs.androidx.compose.ui.tooling.preview)
     implementation(libs.androidx.compose.material3)
 
+    implementation(libs.okhttp)
+    implementation(libs.okhttp.logging)
+    implementation(libs.retrofit)
+    implementation(libs.retrofit.gson)
+    implementation(libs.retrofit.kotlinx.serialization)
+    implementation(libs.kotlinx.datetime)
+
     //Hilt
     implementation(libs.hilt.android)
+    implementation("com.google.dagger:hilt-android:2.59.1") {
+        exclude(group = "jakarta.inject", module = "jakarta.inject-api")
+    }
+    implementation(libs.ads.mobile.sdk)
+    ksp("com.google.dagger:hilt-android-compiler:2.59.1") {
+        exclude(group = "jakarta.inject", module = "jakarta.inject-api")
+    }
     ksp(libs.hilt.compiler)
     implementation(libs.hilt.navigation.compose)
 
@@ -73,10 +87,7 @@ dependencies {
     implementation(libs.androidx.navigation3.ui)
     implementation(libs.androidx.lifecycle.viewmodel.navigation3.android)
 
-    //Navigation 3
-    implementation(libs.androidx.navigation3.runtime)
-    implementation(libs.androidx.navigation3.ui)
-    implementation(libs.androidx.lifecycle.viewmodel.navigation3.android)
+
 
     //Paging3
     implementation(libs.androidx.paging.compose)
@@ -91,6 +102,7 @@ dependencies {
     implementation(libs.androidx.material3.adaptive.navigation)
     implementation(libs.androidx.material3.navigation.suite)
 
+    implementation(libs.okhttp)
 
 
 
